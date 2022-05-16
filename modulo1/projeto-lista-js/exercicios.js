@@ -112,20 +112,12 @@ function checaRenovacaoRG() {
   let age = thisYear - birthYear;
   let renovar = thisYear - rgYear;
 
-  if (age <= 50) {
-    if (renovar >= 10) {
-      console.log(true);
-    } else {
-      console.log(false);
-    }
-  }
-
-  if (age > 50) {
-    if (renovar >= 15) {
-      console.log(true);
-    } else {
-      console.log(false);
-    }
+  if (age >= 20 && age <= 50) {
+    console.log(renovar >= 10);
+  } else if (age > 50) {
+    console.log(renovar >= 15);
+  } else {
+    console.log("Você ainda é um bebê");
   }
 }
 
@@ -147,5 +139,5 @@ function checaValidadeInscricaoLabenu() {
   let answers = [minAge, escolaridade, disponibilidade];
   let positiveAnswers = ["sim", "sim", "sim"];
 
-  console.log(answers == positiveAnswers);
+  return console.log(answers == positiveAnswers);
 }
