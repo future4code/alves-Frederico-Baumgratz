@@ -191,21 +191,25 @@ let ticketAmount = Number(prompt("Quantos ingressos você deseja?"));
 
 // Não consegui fazer funcionar com switch, mas com if vai!
 // OBS: Eu não entendo por que o código não retorna um número na compra internacional. Até o Typeoff do ingressoUs é number. Mas na hora de fazer a multiplicação e entregar o valor do ingresso/o valor total, eles me volta NaN.
+// Entendi! Ele estava retornando NaN porque o ticketPriceUs estava declarado fora do if. Ou seja, o ticketPriceBr ainda não tinha valor, então não tinha como fazer a multiplicação.
+// OBS2: Inclui a variável ticketPriceUsRounded para o valor sair melhor, porque estava saindo com mtos decimais.
 
 let ticketPriceBr;
-let ticketPriceUs = ticketPriceBr * 4.1;
 
 if (gameBracketInput == "SF") {
   if (ticketType == "1") {
     ticketPriceBr = 1320;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
-      console.log(ticketPriceUs);
-      console.log(typeof ticketPriceUs);
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
       console.log(
@@ -215,11 +219,16 @@ if (gameBracketInput == "SF") {
   }
   if (ticketType == "2") {
     ticketPriceBr = 880;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
@@ -230,11 +239,16 @@ if (gameBracketInput == "SF") {
   }
   if (ticketType == "3") {
     ticketPriceBr = 550;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
@@ -245,11 +259,16 @@ if (gameBracketInput == "SF") {
   }
   if (ticketType == "4") {
     ticketPriceBr = 220;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
@@ -271,11 +290,16 @@ if (gameBracketInput == "SF") {
 if (gameBracketInput == "DT") {
   if (ticketType == "1") {
     ticketPriceBr = 660;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
@@ -286,11 +310,16 @@ if (gameBracketInput == "DT") {
   }
   if (ticketType == "2") {
     ticketPriceBr = 440;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
@@ -301,11 +330,16 @@ if (gameBracketInput == "DT") {
   }
   if (ticketType == "3") {
     ticketPriceBr = 330;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
@@ -316,11 +350,16 @@ if (gameBracketInput == "DT") {
   }
   if (ticketType == "4") {
     ticketPriceBr = 170;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
@@ -342,11 +381,16 @@ if (gameBracketInput == "DT") {
 if (gameBracketInput == "FI") {
   if (ticketType == "1") {
     ticketPriceBr = 1980;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
@@ -357,11 +401,16 @@ if (gameBracketInput == "FI") {
   }
   if (ticketType == "2") {
     ticketPriceBr = 1320;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
@@ -372,11 +421,16 @@ if (gameBracketInput == "FI") {
   }
   if (ticketType == "3") {
     ticketPriceBr = 880;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
@@ -387,11 +441,16 @@ if (gameBracketInput == "FI") {
   }
   if (ticketType == "4") {
     ticketPriceBr = 330;
+    let ticketPriceUs = ticketPriceBr * 4.1;
+    let ticketPriceUsRounded = (Math.round(ticketPriceUs * 100) / 100).toFixed(
+      2
+    );
     let totalPrice;
     if (gameTypeInput == "IN") {
       totalPrice = ticketPriceUs * ticketAmount;
+      let totalPriceRounded = (Math.round(totalPrice * 100) / 100).toFixed(2);
       console.log(
-        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUs}\nValor total: R$ ${totalPrice}`
+        `--- Dados da compra ---\nNome do cliente: ${userName}\nTipo do jogo: ${gameTypeOutput}\nEtapa do jogo: ${gameBracketOutput}\nCategoria: ${ticketType}\nQuantidade de Ingressos: ${ticketAmount} ingressos\n--- Valores ---\nValor do ingresso: R$ ${ticketPriceUsRounded}\nValor total: R$ ${totalPriceRounded}`
       );
     } else {
       totalPrice = ticketPriceBr * ticketAmount;
