@@ -87,7 +87,7 @@ for (let x = 0; x < arrayOriginal.length; x++) {
 // c) Escreva um programa que **crie** um novo array contendo, somente, os números pares do array original e **imprima** esse novo array
 
 for (let numeroPar of arrayOriginal) {
-  if (numeroPar > 18) {
+  if (numeroPar % 2 === 0) {
     console.log(numeroPar);
   }
 }
